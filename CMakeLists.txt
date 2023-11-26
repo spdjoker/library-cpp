@@ -17,11 +17,12 @@ set(FMT_LIBRARIES ${FMT_PATH}/build/libfmt.a)
 include_directories(${FMT_PATH}/include)
 
 set(JKR_SOURCE_FILES
-  # src/main.cpp
+
+  src/jkr/sort.hpp
+  src/jkr/type.hpp
 
   src/jkr/sort/quicksort.hpp
-
-  src/jkr/type.hpp
+  src/jkr/sort/reverse_quicksort.hpp
 
   src/jkr/type/bitmap.cpp
   src/jkr/type/bitmap.hpp
