@@ -58,7 +58,7 @@ void run_test(vector<vector<int>> data, std::string algorithm_name, sorting_algo
   }
   time_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(high_resolution_clock::now() - start_time).count();
 
-  fmt::println("\e[32m{:16}\e[0m[PASSED] -> Test: {:.2f} ms, Avg: {:.2f} ms, Range: ({:.2f}, {:.2f}) ms, Total: {:.2f} ms", 
+  fmt::println("\e[32m{:16}\e[0m[PASSED] -> Test: {:.4f} ms, Avg: {:.4f} ms, Range: ({:.4f}, {:.4f}) ms, Total: {:.4f} ms", 
                algorithm_name, 
                total_sort_time_ns / 1.0e6, 
                total_sort_time_ns / ((double)data.size() * 1.0e6), 
@@ -98,8 +98,7 @@ int main(int argc, char* argv[]) {
     }
   }
 
-  vector<vector<int>> sorted_reversed(DATA_COUNT);
-
+  // Sorting Tests (Each w/ copy of data)
   run_test(data, "Quicksort", quicksort, true);
   run_test(data, "Quicksort (R)", reverse_quicksort, false);
   
